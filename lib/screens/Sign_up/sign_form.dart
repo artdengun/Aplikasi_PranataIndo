@@ -71,7 +71,9 @@ class _SignUpFormState extends State<SignUpForm> {
               return null;
             },
           ),
-          SizedBox(height: getProportionateScreenHeight(30),),
+          SizedBox(
+            height: getProportionateScreenHeight(30),
+          ),
           TextFormField(
             obscureText: true,
             decoration: InputDecoration(
@@ -101,7 +103,9 @@ class _SignUpFormState extends State<SignUpForm> {
               return null;
             },
           ),
-          SizedBox(height: getProportionateScreenHeight(30),),
+          SizedBox(
+            height: getProportionateScreenHeight(30),
+          ),
           TextFormField(
             obscureText: true,
             decoration: InputDecoration(
@@ -132,12 +136,14 @@ class _SignUpFormState extends State<SignUpForm> {
             },
           ),
           FormError(errors: errors),
-          SizedBox(height: getProportionateScreenHeight(40),),
+          SizedBox(
+            height: getProportionateScreenHeight(40),
+          ),
           DefaultButton(
             text: "CONTINUE",
             press: () {
-              if(_formKey.currentState.validate()) {
-                  Navigator.pushNamed(context, CompleteProfilScreen.routeName);
+              if (_formKey.currentState.validate()) {
+                Navigator.pushNamed(context, CompleteProfilScreen.routeName);
               }
             },
           )

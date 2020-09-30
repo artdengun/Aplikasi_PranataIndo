@@ -1,4 +1,5 @@
 import 'package:desain_awal/screens/Dashboard/dashboard_menu_screen.dart';
+import 'package:desain_awal/screens/Otp/Otp_screen.dart';
 import 'package:desain_awal/screens/Sign_in/sign_in.dart';
 import 'package:desain_awal/screens/Sign_up/Sign_Up_Screen.dart';
 import 'package:desain_awal/screens/complete_profil/complete_profil_screen.dart';
@@ -18,4 +19,5 @@ final Map<String, WidgetBuilder> routes = {
   SignUpScreen.routeName: (context) => SignUpScreen(),
   DashboardMenuScreen.routeName: (context) => DashboardMenuScreen(),
   CompleteProfilScreen.routeName: (context) => CompleteProfilScreen(),
+  OtpScreen.routeName: (context) => OtpScreen(),
 };
