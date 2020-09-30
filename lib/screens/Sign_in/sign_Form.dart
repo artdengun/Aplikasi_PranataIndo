@@ -23,6 +23,21 @@ class _SignFormState extends State<SignForm> {
   String email;
   String password;
   bool remember = false;
+
+  void addError({String error}) {
+    if (!errors.contains(error))
+      setState(() {
+        errors.add(error);
+      });
+  }
+
+  void removeError({String error}) {
+    if (!errors.contains(error))
+      setState(() {
+        errors.remove(error);
+      });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -40,12 +55,14 @@ class _SignFormState extends State<SignForm> {
           Row(
             children: [
               Checkbox(
-                  value: false,
-                  onChanged: (value) {
-                    setState(() {
-                      remember = value;
-                    });
-                  }),
+                value: remember,
+                activeColor: kPrimaryColor,
+                onChanged: (value) {
+                  setState(() {
+                    remember = value;
+                  });
+                },
+              ),
               Text("Remember me"),
               Spacer(),
               GestureDetector(
@@ -61,17 +78,16 @@ class _SignFormState extends State<SignForm> {
               )
             ],
           ),
+          FormError(errors: errors),
           SizedBox(
             height: getProportionateScreenHeight(20),
           ),
-          FormError(errors: errors),
           DefaultButton(
             text: "LOGIN",
             press: () {
               if (_fromKey.currentState.validate()) {
                 _fromKey.currentState.save();
                 // datanya nanti ada disini
-
                 Navigator.pushNamed(context, LoginSuccesScreen.routeName);
               }
             },
@@ -83,118 +99,67 @@ class _SignFormState extends State<SignForm> {
 
   TextFormField buildPasswordFormField() {
     return TextFormField(
+      obscureText: true,
+      decoration: InputDecoration(
+        hintText: "Password",
+        labelText: "Enter Your Password",
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        suffixIcon: CostumSuffixIcon(
+          svgIcon: "assets/icons/smart-house.svg",
+        ),
+      ),
       onSaved: (newValue) => password = newValue,
       onChanged: (value) {
-        if (value.isNotEmpty && errors.contains(kPassNullError)) {
-          setState(() {
-            errors.remove(kPassNullError);
-            return "";
-          });
-        } else if (value.length >= 8 && errors.contains(kShortPassError)) {
-          setState(() {
-            errors.remove(kShortPassError);
-            return "";
-          });
-          return "";
+        if (value.isNotEmpty) {
+          removeError(error: kPassNullError);
+        } else if (value.length >= 8) {
+          removeError(error: kShortPassError);
         }
         return null;
       },
       validator: (value) {
-        if (value.isEmpty && !errors.contains(kPassNullError)) {
-          setState(() {
-            errors.add(kPassNullError);
-          });
-        } else if (value.length < 8 && !errors.contains(kShortPassError)) {
-          setState(() {
-            errors.add(kShortPassError);
-          });
+        if (value.isEmpty) {
+          addError(error: kPassNullError);
+          return "";
+        } else if (value.length < 8) {
+          addError(error: kShortPassError);
+          return "";
         }
         return null;
       },
-      obscureText: true,
-      decoration: InputDecoration(
-        hintText: "Masukan Password",
-        labelText: "PASSWORD",
-        floatingLabelBehavior: FloatingLabelBehavior.always,
-        // agar tulisan email berada di atas label
-        suffixIcon: CostumSuffixIcon(
-          svgIcon: "assets/icons/smart-house.svg",
-        ),
-
-        contentPadding: EdgeInsets.symmetric(horizontal: 45, vertical: 20),
-        // membuat tulisan agak menjorok horizontal atau kesamping
-        // membuat border menjadi lebih besar kebawah dengan vertical
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(28),
-          // membuat border menjadi bulat dengan point 28
-          borderSide: BorderSide(color: kTextColor),
-          // memberikan warna ketika kursos berada di email
-          gapPadding: 10,
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(28),
-          borderSide: BorderSide(color: kTextColor),
-          gapPadding: 10,
-        ),
-      ),
     );
   }
 
   TextFormField buildEmailFormField() {
     return TextFormField(
-      onSaved: (newValue) => email = newValue,
-      onChanged: (value) {
-        if (value.isNotEmpty && errors.contains(kEmailNullError)) {
-          setState(() {
-            errors.remove(kEmailNullError);
-          });
-        } else if (emailValidationRegExp.hasMatch(value) &&
-            errors.contains(kInvalidEmailError)) {
-          setState(() {
-            errors.remove(kInvalidEmailError);
-          });
-          return "";
-        }
-      },
-      validator: (value) {
-        if (value.isEmpty && !errors.contains(kEmailNullError)) {
-          setState(() {
-            errors.add(kEmailNullError);
-          });
-        } else if (!emailValidationRegExp.hasMatch(value) &&
-            !errors.contains(kInvalidEmailError)) {
-          setState(() {
-            errors.add(kInvalidEmailError);
-          });
-        }
-        return null;
-      },
       keyboardType: TextInputType.emailAddress,
+      onSaved: (newValue) => email = newValue,
       decoration: InputDecoration(
         hintText: "Masukan Email kamu",
         labelText: "EMAIL",
         floatingLabelBehavior: FloatingLabelBehavior.always,
-        // agar tulisan email berada di atas label
         suffixIcon: CostumSuffixIcon(
           svgIcon: "assets/icons/email.svg",
         ),
-
-        contentPadding: EdgeInsets.symmetric(horizontal: 45, vertical: 20),
-        // membuat tulisan agak menjorok horizontal atau kesamping
-        // membuat border menjadi lebih besar kebawah dengan vertical
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(28),
-          // membuat border menjadi bulat dengan point 28
-          borderSide: BorderSide(color: kTextColor),
-          // memberikan warna ketika kursos berada di email
-          gapPadding: 10,
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(28),
-          borderSide: BorderSide(color: kTextColor),
-          gapPadding: 10,
-        ),
       ),
+      onChanged: (value) {
+        if (value.isNotEmpty) {
+          removeError(error: kEmailNullError);
+        } else if (emailValidationRegExp.hasMatch(value)) {
+          removeError(error: kInvalidEmailError);
+        }
+        return null;
+      },
+      validator: (value) {
+        if (value.isEmpty) {
+          addError(error: kEmailNullError);
+          return "";
+        } else if (!emailValidationRegExp.hasMatch(value)) {
+          addError(error: kInvalidEmailError);
+          return "";
+        }
+        return null;
+      },
     );
   }
 }

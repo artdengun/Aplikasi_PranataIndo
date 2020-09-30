@@ -1,3 +1,4 @@
+import 'package:desain_awal/size_config.dart';
 import 'package:flutter/material.dart';
 
 // 1 . Kita membuat variable dengan warna yang sudah ditentukan
@@ -15,6 +16,11 @@ const kSecondaryColor = Color(0xFF979797);
 const kTextColor = Color(0xFF757575);
 
 const kAnimationDuration = Duration(microseconds: 200);
+
+final headingStyle = TextStyle(
+    color: Colors.black,
+    fontSize: getProportionateScreenWidth(28),
+    fontWeight: FontWeight.bold);
 
 // form error
 final RegExp emailValidationRegExp =
