@@ -14,14 +14,15 @@ class Body extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
+              SizedBox(height: SizeConfig.screenHeight * 0.02),
               Text("Register Account", style: headingStyle),
               Text(
                 "Silahkan Daftar, \n Pastikan Data yang dimasukan sesuai dengan data diri",
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: SizeConfig.screenHeight * 0.08),
+              SizedBox(height: SizeConfig.screenHeight * 0.07),
               SignUpForm(),
-              SizedBox(height: SizeConfig.screenHeight * 0.08),
+              SizedBox(height: SizeConfig.screenHeight * 0.07),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -38,11 +39,14 @@ class Body extends StatelessWidget {
                 press: () {},
               ),
               SocialCard(
-                icon: "assets/icons/facebook.svg",
+                icon: "assets/icons/github.svg",
                 press: () {},
               ),
-            ]
-          )
+            ],
+          ),
+              SizedBox(height: getProportionateScreenHeight(20),),
+              Text("By Continue your confirm that you agree \nWith our Term and Condition",
+              textAlign: TextAlign.center,),
             ],
           ),
         ),

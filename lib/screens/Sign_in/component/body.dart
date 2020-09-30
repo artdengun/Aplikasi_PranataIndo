@@ -49,7 +49,7 @@ class Body extends StatelessWidget {
                       press: () {},
                     ),
                     SocialCard(
-                      icon: "assets/icons/facebook.svg",
+                      icon: "assets/icons/github.svg",
                       press: () {},
                     ),
                   ],

@@ -48,7 +48,7 @@ class _SignUpFormState extends State<SignUpForm> {
               labelText: "EMAIL",
               floatingLabelBehavior: FloatingLabelBehavior.always,
               suffixIcon: CostumSuffixIcon(
-                svgIcon: "assets/icons/email.svg",
+                svgIcon: "assets/icons/message.svg",
               ),
             ),
             onChanged: (value) {
@@ -78,7 +78,7 @@ class _SignUpFormState extends State<SignUpForm> {
               labelText: "Enter Your Password",
               floatingLabelBehavior: FloatingLabelBehavior.always,
               suffixIcon: CostumSuffixIcon(
-                svgIcon: "assets/icons/smart-house.svg",
+                svgIcon: "assets/icons/user.svg",
               ),
             ),
             onSaved: (newValue) => password = newValue,
@@ -108,7 +108,7 @@ class _SignUpFormState extends State<SignUpForm> {
               labelText: "Re-enter your password",
               floatingLabelBehavior: FloatingLabelBehavior.always,
               suffixIcon: CostumSuffixIcon(
-                svgIcon: "assets/icons/smart-house.svg",
+                svgIcon: "assets/icons/user.svg",
               ),
             ),
             onSaved: (newValue) => confrim_password = newValue,
