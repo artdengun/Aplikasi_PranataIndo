@@ -2,6 +2,7 @@ import 'package:desain_awal/components/CUstom_suffix_icons.dart';
 import 'package:desain_awal/components/default_button.dart';
 import 'package:desain_awal/components/form_error.dart';
 import 'package:desain_awal/constants.dart';
+import 'package:desain_awal/screens/complete_profil/complete_profil_screen.dart';
 import 'package:desain_awal/size_config.dart';
 import 'package:flutter/material.dart';
 
@@ -123,7 +124,7 @@ class _SignUpFormState extends State<SignUpForm> {
             validator: (value) {
               if (value.isEmpty) {
                 return "";
-              } else if (password != confrim_password) {
+              } else if (password != value) {
                 addError(error: kMatchPassError);
                 return "";
               }
@@ -136,7 +137,7 @@ class _SignUpFormState extends State<SignUpForm> {
             text: "CONTINUE",
             press: () {
               if(_formKey.currentState.validate()) {
-
+                  Navigator.pushNamed(context, CompleteProfilScreen.routeName);
               }
             },
           )

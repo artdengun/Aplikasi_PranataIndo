@@ -1,6 +1,7 @@
 import 'package:desain_awal/screens/Dashboard/dashboard_menu_screen.dart';
 import 'package:desain_awal/screens/Sign_in/sign_in.dart';
 import 'package:desain_awal/screens/Sign_up/Sign_Up_Screen.dart';
+import 'package:desain_awal/screens/complete_profil/complete_profil_screen.dart';
 import 'package:desain_awal/screens/forgot_password/forgot_password.dart';
 import 'package:desain_awal/screens/login_succes/login_succes_screen.dart';
 import 'package:desain_awal/screens/splash/splash_screen.dart';
@@ -16,4 +17,5 @@ final Map<String, WidgetBuilder> routes = {
   LoginSuccesScreen.routeName: (context) => LoginSuccesScreen(),
   SignUpScreen.routeName: (context) => SignUpScreen(),
   DashboardMenuScreen.routeName: (context) => DashboardMenuScreen(),
+  CompleteProfilScreen.routeName: (context) => CompleteProfilScreen(),
 };

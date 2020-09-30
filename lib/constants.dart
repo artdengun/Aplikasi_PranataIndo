@@ -24,9 +24,12 @@ final headingStyle = TextStyle(
 
 // form error
 final RegExp emailValidationRegExp =
-    RegExp(r"^[a-zA-Z0-0.]+@[a-zA-Z0-9]+\.[A-Za-z]+");
+    RegExp(r'/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g');
 const String kEmailNullError = "Masukan Email kamu";
 const String kInvalidEmailError = "Masukan Email Kamu Dengan Benar";
 const String kPassNullError = "Masukan password kamu";
 const String kShortPassError = "Password Terlalu Pendek";
 const String kMatchPassError = "Password Tidak Cocok, Silahkan Coba lagi";
+const String kNameNullError  = "Silahkan Masukan Nama anda";
+const String kPhoneNumberNullError = "Silahkan Masukan Nomer Handaphone anda";
+const String kAddressNullError = "Silahkan Masukan Alamat Anda";
