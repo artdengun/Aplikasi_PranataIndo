@@ -10,7 +10,8 @@ class Body extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
+        padding:
+            EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -23,30 +24,34 @@ class Body extends StatelessWidget {
               SizedBox(height: SizeConfig.screenHeight * 0.07),
               SignUpForm(),
               SizedBox(height: SizeConfig.screenHeight * 0.07),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SocialCard(
-                icon: "assets/icons/google.svg",
-                press: () {},
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SocialCard(
+                    icon: "assets/icons/google.svg",
+                    press: () {},
+                  ),
+                  SocialCard(
+                    icon: "assets/icons/facebook.svg",
+                    press: () {},
+                  ),
+                  SocialCard(
+                    icon: "assets/icons/twitter.svg",
+                    press: () {},
+                  ),
+                  SocialCard(
+                    icon: "assets/icons/github.svg",
+                    press: () {},
+                  ),
+                ],
               ),
-              SocialCard(
-                icon: "assets/icons/facebook.svg",
-                press: () {},
+              SizedBox(
+                height: getProportionateScreenHeight(20),
               ),
-              SocialCard(
-                icon: "assets/icons/twitter.svg",
-                press: () {},
+              Text(
+                "By Continue your confirm that you agree \nWith our Term and Condition",
+                textAlign: TextAlign.center,
               ),
-              SocialCard(
-                icon: "assets/icons/github.svg",
-                press: () {},
-              ),
-            ],
-          ),
-              SizedBox(height: getProportionateScreenHeight(20),),
-              Text("By Continue your confirm that you agree \nWith our Term and Condition",
-              textAlign: TextAlign.center,),
             ],
           ),
         ),

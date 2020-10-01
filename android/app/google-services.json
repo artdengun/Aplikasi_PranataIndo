@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "259967642665",
+    "firebase_url": "https://aplikasi-demenbelanja-81a78.firebaseio.com",
+    "project_id": "aplikasi-demenbelanja-81a78",
+    "storage_bucket": "aplikasi-demenbelanja-81a78.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:259967642665:android:26a755c0e754524d768038",
+        "android_client_info": {
+          "package_name": "com.example.demenBelanja"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "259967642665-l5ro4ap6hg8pcfh0o40pfhn3b5f8fp8a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB63mFeJSTr_lMpfxmU4U8Y41_dUllJU68"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "259967642665-l5ro4ap6hg8pcfh0o40pfhn3b5f8fp8a.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "259967642665-cuv35upcutparpmvh17ssei895cm6g41.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.desainawal"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

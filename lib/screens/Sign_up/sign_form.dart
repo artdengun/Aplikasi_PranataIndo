@@ -6,6 +6,8 @@ import 'package:desain_awal/screens/complete_profil/complete_profil_screen.dart'
 import 'package:desain_awal/size_config.dart';
 import 'package:flutter/material.dart';
 
+// google sign in
+
 class SignUpForm extends StatefulWidget {
   SignUpForm({Key key}) : super(key: key);
 
@@ -14,11 +16,14 @@ class SignUpForm extends StatefulWidget {
 }
 
 class _SignUpFormState extends State<SignUpForm> {
+  // google sign in
+
   List<String> errors = [];
 
   final _formKey = GlobalKey<FormState>();
   String email;
   String password;
+  // ignore: non_constant_identifier_names
   String confrim_password;
 
   void addError({String error}) {
