@@ -2,6 +2,7 @@ import 'package:desain_awal/components/no_Account_Text.dart';
 import 'package:desain_awal/components/social_card.dart';
 import 'package:desain_awal/size_config.dart';
 import 'package:flutter/material.dart';
+import '../google_auth.dart';
 import '../sign_Form.dart';
 
 class Body extends StatelessWidget {
@@ -38,7 +39,9 @@ class Body extends StatelessWidget {
                   children: [
                     SocialCard(
                       icon: "assets/icons/google.svg",
-                      press: () {},
+                      press: () {
+                        GoogleAuth(); 
+                      },
                     ),
                     SocialCard(
                       icon: "assets/icons/facebook.svg",
