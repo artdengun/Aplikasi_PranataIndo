@@ -1,4 +1,3 @@
-import 'package:desain_awal/FireBase/firebase_screen_auth.dart';
 import 'package:desain_awal/screens/Dashboard/dashboard_menu_screen.dart';
 import 'package:desain_awal/screens/Otp/Otp_screen.dart';
 import 'package:desain_awal/screens/Sign_in/sign_in.dart';
@@ -21,5 +20,4 @@ final Map<String, WidgetBuilder> routes = {
   DashboardMenuScreen.routeName: (context) => DashboardMenuScreen(),
   CompleteProfilScreen.routeName: (context) => CompleteProfilScreen(),
   OtpScreen.routeName: (context) => OtpScreen(),
-  FirebaseScreenAuth.routeName: (contex) => FirebaseScreenAuth(),
 };

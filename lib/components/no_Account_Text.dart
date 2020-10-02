@@ -1,42 +1,32 @@
-// import 'package:desain_awal/screens/Sign_up/Sign_up_Screen.dart';
-import 'package:desain_awal/screens/Sign_up/Sign_Up_Screen.dart';
+import 'package:desain_awal/screens/Sign_in/sign_in.dart';
+import 'package:desain_awal/screens/forgot_password/forgot_password.dart';
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
 import '../size_config.dart';
 
-class NoAccountText extends StatelessWidget {
-  const NoAccountText({
-    Key key,
-  }) : super(key: key);
+class NoAccountText extends StatefulWidget {
+  @override
+  _NoACCState createState() => _NoACCState();
+}
 
+class _NoACCState extends State<NoAccountText> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
-          " Tidak Memiliki Account ? ",
-          style: TextStyle(
-            fontSize: getProportionateScreenWidth(16),
-          ),
-        ),
-        // GestureDetector(
-        // onTap: () =>
-        //     // Navigator.popAndPushNamed(context, SignUpScreen.routeName),
-        // child: Text(
+        Text("Sudah ingat password kamu ? "),
         GestureDetector(
           onTap: () =>
-              Navigator.popAndPushNamed(context, SignUpScreen.routeName),
+              Navigator.popAndPushNamed(context, SignInScreen.routeName),
           child: Text(
-            " Sign Up  ",
+            "Login",
             style: TextStyle(
-              fontSize: getProportionateScreenWidth(16),
-              color: kPrimaryColor,
-            ),
+                fontSize: getProportionateScreenWidth(15),
+                color: kPrimaryColor,
+                decoration: TextDecoration.underline),
           ),
-        ),
-        // ),
+        )
       ],
     );
   }

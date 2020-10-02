@@ -1,6 +1,8 @@
+import 'package:desain_awal/Controller/GoogleAuthentication.dart';
 import 'package:desain_awal/components/CUstom_suffix_icons.dart';
 import 'package:desain_awal/components/default_button.dart';
 import 'package:desain_awal/components/form_error.dart';
+import 'package:desain_awal/screens/Dashboard/dashboard_menu_screen.dart';
 import 'package:desain_awal/screens/forgot_password/forgot_password.dart';
 import 'package:desain_awal/screens/login_succes/login_succes_screen.dart';
 import 'package:flutter/material.dart';
@@ -91,7 +93,59 @@ class _SignFormState extends State<SignForm> {
                 Navigator.pushNamed(context, LoginSuccesScreen.routeName);
               }
             },
-          )
+          ),
+          SizedBox(
+            height: getProportionateScreenHeight(10),
+          ),
+          Text(
+            " Atau Login Menggunakan GOOGLE",
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          SizedBox(
+            height: getProportionateScreenHeight(10),
+          ),
+          Container(
+              margin: EdgeInsets.fromLTRB(30.0, 5.0, 30.0, 5.0),
+              child: RaisedButton(
+                padding: EdgeInsets.only(top: 3.0, bottom: 3.0, left: 3.0),
+                color: const Color(0xFF4285F4),
+                onPressed: () => googleSignIn().whenComplete(() =>
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (context) => DashboardMenuScreen()))),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      "assets/images/loginscreen.png",
+                      height: 48.0,
+                    ),
+                    Container(
+                        padding: EdgeInsets.only(left: 10.0, right: 10.0),
+                        child: new Text(
+                          "Sign in with Google",
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.bold),
+                        )),
+                  ],
+                ),
+              )
+              // children: [
+              //   MaterialButton(
+              //     padding: EdgeInsets.zero,
+              //     onPressed: () => googleSignIn().whenComplete(() =>
+              //         Navigator.of(context).pushReplacement(MaterialPageRoute(
+              //             builder: (context) => DashboardMenuScreen()))),
+              //     child: Image(
+              //       image: AssetImage("assets/images/loginscreen.png"),
+              //       width: 150,
+              //       height: 60,
+              //     ),
+              //   ),
+              //   SizedBox(
+              //     height: 10.0,
+              //   ),
+
+              // ],
+              )
         ],
       ),
     );

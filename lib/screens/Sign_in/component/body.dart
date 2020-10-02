@@ -1,8 +1,8 @@
-import 'package:desain_awal/components/no_Account_Text.dart';
-import 'package:desain_awal/components/social_card.dart';
+
+import 'package:desain_awal/screens/Sign_up/Sign_Up_Screen.dart';
 import 'package:desain_awal/size_config.dart';
 import 'package:flutter/material.dart';
-import '../google_auth.dart';
+import '../../../constants.dart';
 import '../sign_Form.dart';
 
 class Body extends StatelessWidget {
@@ -33,34 +33,23 @@ class Body extends StatelessWidget {
                 ),
                 SizedBox(height: SizeConfig.screenHeight * 0.08),
                 SignForm(),
-                SizedBox(height: SizeConfig.screenHeight * 0.08),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SocialCard(
-                      icon: "assets/icons/google.svg",
-                      press: () {
-                        GoogleAuth(); 
-                      },
+                SizedBox(height: SizeConfig.screenHeight * 0.02),
+                Text("Belum punya account ? "),
+                GestureDetector(
+                  onTap: () =>
+                      Navigator.pushNamed(context, SignUpScreen.routeName),
+                  child: Text(
+                    "REGISTER",
+                    style: TextStyle(
+                      fontSize: getProportionateScreenWidth(14),
+                      color: kPrimaryColor,
+                      decoration: TextDecoration.underline,
                     ),
-                    SocialCard(
-                      icon: "assets/icons/facebook.svg",
-                      press: () {},
-                    ),
-                    SocialCard(
-                      icon: "assets/icons/twitter.svg",
-                      press: () {},
-                    ),
-                    SocialCard(
-                      icon: "assets/icons/github.svg",
-                      press: () {},
-                    ),
-                  ],
+                  ),
                 ),
                 SizedBox(
                   height: getProportionateScreenHeight(20),
                 ),
-                NoAccountText()
               ],
             ),
           ),
