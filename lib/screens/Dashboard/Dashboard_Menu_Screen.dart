@@ -1,4 +1,4 @@
-import 'package:desain_awal/screens/Dashboard/component/body.dart';
+import 'package:desain_awal/screens/Dashboard/component/Body.dart';
 import 'package:flutter/material.dart';
 
 class DashboardMenuScreen extends StatelessWidget {

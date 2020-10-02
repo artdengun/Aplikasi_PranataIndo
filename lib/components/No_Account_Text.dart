@@ -1,9 +1,9 @@
-import 'package:desain_awal/screens/Sign_in/sign_in.dart';
-import 'package:desain_awal/screens/forgot_password/forgot_password.dart';
+import 'package:desain_awal/screens/Sign_in/Sign_In.dart';
+import 'package:desain_awal/screens/forgot_password/Forgot_Password.dart';
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
-import '../size_config.dart';
+import '../Constants.dart';
+import '../Size_config.dart';
 
 class NoAccountText extends StatefulWidget {
   @override

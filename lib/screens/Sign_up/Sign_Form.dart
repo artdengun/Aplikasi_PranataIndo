@@ -1,9 +1,9 @@
-import 'package:desain_awal/components/CUstom_suffix_icons.dart';
-import 'package:desain_awal/components/default_button.dart';
-import 'package:desain_awal/components/form_error.dart';
-import 'package:desain_awal/constants.dart';
-import 'package:desain_awal/screens/complete_profil/complete_profil_screen.dart';
-import 'package:desain_awal/size_config.dart';
+import 'package:desain_awal/components/Custom_Suffix_Icons.dart';
+import 'package:desain_awal/components/Default_Button.dart';
+import 'package:desain_awal/components/Form_Error.dart';
+import 'package:desain_awal/Constants.dart';
+import 'package:desain_awal/screens/complete_profil/Complete_Profil_Screen.dart';
+import 'package:desain_awal/Size_config.dart';
 import 'package:flutter/material.dart';
 
 // google sign in

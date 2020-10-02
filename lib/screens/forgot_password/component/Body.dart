@@ -1,7 +1,7 @@
-import 'package:desain_awal/size_config.dart';
+import 'package:desain_awal/Size_config.dart';
 import 'package:flutter/material.dart';
 
-import '../Forgot_pass_form.dart';
+import '../Forgot_Password_Form.dart';
 
 class Body extends StatelessWidget {
   @override

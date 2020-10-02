@@ -1,4 +1,4 @@
-import 'package:desain_awal/size_config.dart';
+import 'package:desain_awal/Size_config.dart';
 import 'package:flutter/material.dart';
 
 // 1 . Kita membuat variable dengan warna yang sudah ditentukan

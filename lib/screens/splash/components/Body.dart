@@ -1,13 +1,13 @@
 // ignore: unused_import
-import 'package:desain_awal/components/default_button.dart';
-import 'package:desain_awal/constants.dart';
-import 'package:desain_awal/screens/Sign_in/sign_in.dart';
+import 'package:desain_awal/components/Default_Button.dart';
+import 'package:desain_awal/Constants.dart';
+import 'package:desain_awal/screens/Sign_in/Sign_In.dart';
 // ignore: unused_import
-import 'package:desain_awal/size_config.dart';
+import 'package:desain_awal/Size_config.dart';
 import 'package:flutter/material.dart';
 
 // ini adalah best pratice untuk membuat splash screen
-import 'splash_content.dart';
+import 'Splash_Content.dart';
 
 // 17. kita buat body kemudian kita panggil di splasshscreen
 class Body extends StatefulWidget {

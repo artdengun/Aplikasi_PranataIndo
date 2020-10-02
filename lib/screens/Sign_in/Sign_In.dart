@@ -1,7 +1,7 @@
-import 'package:desain_awal/screens/forgot_password/forgot_password.dart';
+import 'package:desain_awal/screens/forgot_password/Forgot_Password.dart';
 import 'package:flutter/material.dart';
 
-import 'component/body.dart';
+import 'component/Body.dart';
 
 class SignInScreen extends StatelessWidget {
   // kita hubungkan dengan login lanjutan route tadi

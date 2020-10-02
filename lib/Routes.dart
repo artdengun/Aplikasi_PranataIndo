@@ -1,11 +1,11 @@
-import 'package:desain_awal/screens/Dashboard/dashboard_menu_screen.dart';
-import 'package:desain_awal/screens/Otp/Otp_screen.dart';
-import 'package:desain_awal/screens/Sign_in/sign_in.dart';
+import 'package:desain_awal/screens/Dashboard/Dashboard_Menu_Screen.dart';
+import 'package:desain_awal/screens/Otp/Otp_Screen.dart';
+import 'package:desain_awal/screens/Sign_in/Sign_In.dart';
 import 'package:desain_awal/screens/Sign_up/Sign_Up_Screen.dart';
-import 'package:desain_awal/screens/complete_profil/complete_profil_screen.dart';
-import 'package:desain_awal/screens/forgot_password/forgot_password.dart';
-import 'package:desain_awal/screens/login_succes/login_succes_screen.dart';
-import 'package:desain_awal/screens/splash/splash_screen.dart';
+import 'package:desain_awal/screens/complete_profil/Complete_Profil_Screen.dart';
+import 'package:desain_awal/screens/forgot_password/Forgot_Password.dart';
+import 'package:desain_awal/screens/login_succes/Login_Success_Screen.dart';
+import 'package:desain_awal/screens/splash/Splash_Screen.dart';
 import 'package:flutter/widgets.dart';
 
 // we use name route

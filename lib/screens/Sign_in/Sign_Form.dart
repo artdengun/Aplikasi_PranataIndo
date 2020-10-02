@@ -1,14 +1,14 @@
 import 'package:desain_awal/Controller/GoogleAuthentication.dart';
-import 'package:desain_awal/components/CUstom_suffix_icons.dart';
-import 'package:desain_awal/components/default_button.dart';
-import 'package:desain_awal/components/form_error.dart';
-import 'package:desain_awal/screens/Dashboard/dashboard_menu_screen.dart';
-import 'package:desain_awal/screens/forgot_password/forgot_password.dart';
-import 'package:desain_awal/screens/login_succes/login_succes_screen.dart';
+import 'package:desain_awal/components/Custom_Suffix_Icons.dart';
+import 'package:desain_awal/components/Default_Button.dart';
+import 'package:desain_awal/components/Form_Error.dart';
+import 'package:desain_awal/screens/Dashboard/Dashboard_Menu_Screen.dart';
+import 'package:desain_awal/screens/forgot_password/Forgot_Password.dart';
+import 'package:desain_awal/screens/login_succes/Login_Success_Screen.dart';
 import 'package:flutter/material.dart';
 
-import '../../constants.dart';
-import '../../size_config.dart';
+import '../../Constants.dart';
+import '../../Size_config.dart';
 
 class SignForm extends StatefulWidget {
   SignForm({Key key}) : super(key: key);

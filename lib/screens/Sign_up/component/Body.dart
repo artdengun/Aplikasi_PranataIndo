@@ -1,7 +1,7 @@
-import 'package:desain_awal/components/social_card.dart';
-import 'package:desain_awal/constants.dart';
-import 'package:desain_awal/screens/Sign_up/sign_form.dart';
-import 'package:desain_awal/size_config.dart';
+import 'package:desain_awal/components/Social_Card.dart';
+import 'package:desain_awal/Constants.dart';
+import 'package:desain_awal/screens/Sign_up/Sign_Form.dart';
+import 'package:desain_awal/Size_config.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {

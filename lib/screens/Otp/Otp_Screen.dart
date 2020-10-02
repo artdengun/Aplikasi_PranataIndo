@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../Otp/component/body.dart';
+import 'component/Body.dart';
 
 class OtpScreen extends StatelessWidget {
   static String routeName = "/otp";

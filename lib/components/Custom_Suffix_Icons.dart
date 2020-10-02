@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../size_config.dart';
+import '../Size_config.dart';
 
 class CostumSuffixIcon extends StatelessWidget {
   const CostumSuffixIcon({

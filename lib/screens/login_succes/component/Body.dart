@@ -1,6 +1,6 @@
-import 'package:desain_awal/components/default_button.dart';
-import 'package:desain_awal/screens/Dashboard/dashboard_menu_screen.dart';
-import 'package:desain_awal/size_config.dart';
+import 'package:desain_awal/components/Default_Button.dart';
+import 'package:desain_awal/screens/Dashboard/Dashboard_Menu_Screen.dart';
+import 'package:desain_awal/Size_config.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {

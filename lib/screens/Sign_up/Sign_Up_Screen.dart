@@ -1,4 +1,4 @@
-import 'package:desain_awal/screens/Sign_up/component/body.dart';
+import 'package:desain_awal/screens/Sign_up/component/Body.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatelessWidget {

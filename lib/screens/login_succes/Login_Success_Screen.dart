@@ -1,4 +1,4 @@
-import 'package:desain_awal/screens/login_succes/component/body.dart';
+import 'package:desain_awal/screens/login_succes/component/Body.dart';
 import 'package:flutter/material.dart';
 
 class LoginSuccesScreen extends StatelessWidget {

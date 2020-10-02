@@ -1,4 +1,4 @@
-import 'package:desain_awal/screens/forgot_password/component/body.dart';
+import 'package:desain_awal/screens/forgot_password/component/Body.dart';
 import 'package:flutter/material.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {

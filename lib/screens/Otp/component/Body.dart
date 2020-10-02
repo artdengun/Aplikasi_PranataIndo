@@ -1,9 +1,9 @@
-import 'package:desain_awal/constants.dart';
-import 'package:desain_awal/screens/Sign_in/sign_in.dart';
-import 'package:desain_awal/size_config.dart';
+import 'package:desain_awal/Constants.dart';
+import 'package:desain_awal/screens/Sign_in/Sign_In.dart';
+import 'package:desain_awal/Size_config.dart';
 import 'package:flutter/material.dart';
 
-import 'Otp_form.dart';
+import '../Otp_Form.dart';
 
 class Body extends StatelessWidget {
   @override

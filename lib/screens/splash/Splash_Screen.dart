@@ -1,5 +1,5 @@
-import 'package:desain_awal/screens/splash/components/body.dart';
-import 'package:desain_awal/size_config.dart';
+import 'package:desain_awal/screens/splash/components/Body.dart';
+import 'package:desain_awal/Size_config.dart';
 import 'package:flutter/material.dart';
 
 // 14. tahap pembuatan screencast

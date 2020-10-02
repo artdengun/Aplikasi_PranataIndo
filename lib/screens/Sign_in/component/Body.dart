@@ -1,9 +1,9 @@
 
 import 'package:desain_awal/screens/Sign_up/Sign_Up_Screen.dart';
-import 'package:desain_awal/size_config.dart';
+import 'package:desain_awal/Size_config.dart';
 import 'package:flutter/material.dart';
-import '../../../constants.dart';
-import '../sign_Form.dart';
+import '../../../Constants.dart';
+import '../Sign_Form.dart';
 
 class Body extends StatelessWidget {
   const Body({Key key}) : super(key: key);

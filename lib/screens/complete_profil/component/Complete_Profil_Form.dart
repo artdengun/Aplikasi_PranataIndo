@@ -1,11 +1,11 @@
-import 'package:desain_awal/components/CUstom_suffix_icons.dart';
-import 'package:desain_awal/components/default_button.dart';
-import 'package:desain_awal/components/form_error.dart';
-import 'package:desain_awal/screens/Otp/Otp_screen.dart';
+import 'package:desain_awal/components/Custom_Suffix_Icons.dart';
+import 'package:desain_awal/components/Default_Button.dart';
+import 'package:desain_awal/components/Form_Error.dart';
+import 'package:desain_awal/screens/Otp/Otp_Screen.dart';
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
-import '../../../size_config.dart';
+import '../../../Constants.dart';
+import '../../../Size_config.dart';
 
 
 class CompleteProfilForm extends StatefulWidget {
