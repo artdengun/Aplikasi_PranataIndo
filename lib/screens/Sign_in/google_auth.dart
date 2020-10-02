@@ -37,9 +37,11 @@ class _GoogleAuthState extends State<GoogleAuth> {
     });
 
     Future<void> googleSignOut() async {
-      await _auth.signOut();
-      setState(() {
-        isSignIn = true;
+      await _auth.signOut().then((value) {
+        _googleSignIn.signOut();
+        setState(() {
+          isSignIn = true;
+        });
       });
     }
   }
