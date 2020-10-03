@@ -6,6 +6,7 @@ import 'package:desain_awal/screens/complete_profil/Complete_Profil_Screen.dart'
 import 'package:desain_awal/screens/forgot_password/Forgot_Password.dart';
 import 'package:desain_awal/screens/login_succes/Login_Success_Screen.dart';
 import 'package:desain_awal/screens/splash/Splash_Screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
 
 // we use name route
@@ -17,7 +18,7 @@ final Map<String, WidgetBuilder> routes = {
   ForgotPasswordScreen.routeName: (context) => ForgotPasswordScreen(),
   LoginSuccesScreen.routeName: (context) => LoginSuccesScreen(),
   SignUpScreen.routeName: (context) => SignUpScreen(),
-  DashboardMenuScreen.routeName: (context) => DashboardMenuScreen(),
+  DashboardMenuScreen.routeName: (context) => DashboardMenuScreen(user),
   CompleteProfilScreen.routeName: (context) => CompleteProfilScreen(),
   OtpScreen.routeName: (context) => OtpScreen(),
 };

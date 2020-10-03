@@ -4,7 +4,7 @@ import 'package:desain_awal/components/Default_Button.dart';
 import 'package:desain_awal/components/Form_Error.dart';
 import 'package:desain_awal/screens/Dashboard/Dashboard_Menu_Screen.dart';
 import 'package:desain_awal/screens/forgot_password/Forgot_Password.dart';
-import 'package:desain_awal/screens/login_succes/Login_Success_Screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../Constants.dart';
@@ -18,6 +18,8 @@ class SignForm extends StatefulWidget {
 }
 
 class _SignFormState extends State<SignForm> {
+  TextEditingController emailController = TextEditingController(text: "");
+  TextEditingController passwordController = TextEditingController(text: "");
   // untuk validasi
   final _fromKey = GlobalKey<FormState>();
   // untuk menangkap error
@@ -85,15 +87,15 @@ class _SignFormState extends State<SignForm> {
             height: getProportionateScreenHeight(20),
           ),
           DefaultButton(
-            text: "LOGIN",
-            press: () {
-              if (_fromKey.currentState.validate()) {
-                _fromKey.currentState.save();
-                // datanya nanti ada disini
-                Navigator.pushNamed(context, LoginSuccesScreen.routeName);
-              }
-            },
-          ),
+              text: "LOGIN",
+              press: () async {
+                if (_fromKey.currentState.validate()) {
+                  _fromKey.currentState.save();
+                  // datanya nanti ada disini
+                  await EmailAuthentication.signIn(
+                      emailController.text, passwordController.text);
+                }
+              }),
           SizedBox(
             height: getProportionateScreenHeight(10),
           ),
@@ -105,47 +107,33 @@ class _SignFormState extends State<SignForm> {
             height: getProportionateScreenHeight(10),
           ),
           Container(
-              margin: EdgeInsets.fromLTRB(30.0, 5.0, 30.0, 5.0),
-              child: RaisedButton(
-                padding: EdgeInsets.only(top: 3.0, bottom: 3.0, left: 3.0),
-                color: const Color(0xFF4285F4),
-                onPressed: () => googleSignIn().whenComplete(() =>
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => DashboardMenuScreen()))),
-                child: Row(
-                  children: [
-                    Image.asset(
-                      "assets/images/loginscreen.png",
-                      height: 48.0,
-                    ),
-                    Container(
-                        padding: EdgeInsets.only(left: 10.0, right: 10.0),
-                        child: new Text(
-                          "Sign in with Google",
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
-                        )),
-                  ],
-                ),
-              )
-              // children: [
-              //   MaterialButton(
-              //     padding: EdgeInsets.zero,
-              //     onPressed: () => googleSignIn().whenComplete(() =>
-              //         Navigator.of(context).pushReplacement(MaterialPageRoute(
-              //             builder: (context) => DashboardMenuScreen()))),
-              //     child: Image(
-              //       image: AssetImage("assets/images/loginscreen.png"),
-              //       width: 150,
-              //       height: 60,
-              //     ),
-              //   ),
-              //   SizedBox(
-              //     height: 10.0,
-              //   ),
+            margin: EdgeInsets.fromLTRB(30.0, 5.0, 30.0, 5.0),
+            child: RaisedButton(
+              padding: EdgeInsets.only(top: 3.0, bottom: 3.0, left: 3.0),
+              color: const Color(0xFF4285F4),
+              onPressed: () => googleSignIn().whenComplete(() async {
+                FirebaseUser user = await FirebaseAuth.instance.currentUser();
 
-              // ],
-              )
+                Navigator.of(context).pushReplacement(MaterialPageRoute(
+                    builder: (context) => DashboardMenuScreen(user)));
+              }),
+              child: Row(
+                children: [
+                  Image.asset(
+                    "assets/images/loginscreen.png",
+                    height: 48.0,
+                  ),
+                  Container(
+                      padding: EdgeInsets.only(left: 10.0, right: 10.0),
+                      child: new Text(
+                        "Sign in with Google",
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      )),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -215,5 +203,20 @@ class _SignFormState extends State<SignForm> {
         return null;
       },
     );
+  }
+}
+
+class EmailAuthentication {
+  static Future<FirebaseUser> signIn(String email, String password) async {
+    try {
+      AuthResult result = await auth.signInWithEmailAndPassword(
+          email: email.trim(), password: password);
+
+      FirebaseUser firebaseUser = result.user;
+      return firebaseUser;
+    } catch (e) {
+      print(e.toString());
+      return null;
+    }
   }
 }

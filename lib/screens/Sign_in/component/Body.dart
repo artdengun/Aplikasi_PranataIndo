@@ -1,8 +1,6 @@
-
-import 'package:desain_awal/screens/Sign_up/Sign_Up_Screen.dart';
 import 'package:desain_awal/Size_config.dart';
+import 'package:desain_awal/screens/Sign_up/Sign_Up_Screen.dart';
 import 'package:flutter/material.dart';
-import '../../../Constants.dart';
 import '../Sign_Form.dart';
 
 class Body extends StatelessWidget {
@@ -35,17 +33,16 @@ class Body extends StatelessWidget {
                 SignForm(),
                 SizedBox(height: SizeConfig.screenHeight * 0.02),
                 Text("Belum punya account ? "),
-                GestureDetector(
-                  onTap: () =>
-                      Navigator.pushNamed(context, SignUpScreen.routeName),
+                RaisedButton(
                   child: Text(
-                    "REGISTER",
+                    "daftar disini",
                     style: TextStyle(
-                      fontSize: getProportionateScreenWidth(14),
-                      color: kPrimaryColor,
-                      decoration: TextDecoration.underline,
-                    ),
+                        decoration: TextDecoration.underline,
+                        color: Colors.blueAccent[300]),
                   ),
+                  onPressed: () {
+                    Navigator.pushNamed(context, SignUpScreen.routeName);
+                  },
                 ),
                 SizedBox(
                   height: getProportionateScreenHeight(20),
